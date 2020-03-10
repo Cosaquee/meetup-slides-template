@@ -48,6 +48,19 @@
     </section>
 
     <section class="slide compact">
+        <h2>Agenda</h2>
+        <ol>
+            <li>Who am I?</li>
+            <li>Dynamic runtime vs static hosting</li>
+            <li>Requirements</li>
+            <li>Tools that we are using</li>
+            <li>Terraform</li>
+            <li>Cloudfront</li>
+            <li>Lambda@Edge and CSP</li>
+        </ol>
+    </section>
+
+    <section class="slide compact">
         <h2>Who am I?</h2>
         <ol>
             <li>Karol Kozakowski</li>
@@ -62,20 +75,23 @@
 
 
     <section class="slide">
-        <h2>Static vs dynamic?</h2>
+        <h2>Dynamic vs static</h2>
         <img  src="https://media.giphy.com/media/xT9KVwVraalcvmKBfW/source.mp4"  alt=""/>
     </section>
+
 
     <section class="slide compact">
         <h2>Dynamic runtime</h2>
 
         <ol>
             <li class="next">Cost</li>
+
             <li class="next">Security issues</li>
             <ol>
                 <li class="next">Updates</li>
                 <li class="next">Upgrades</li>
             </ol>
+            <li class="next">Scalability and handling spikes</li>
             <li class="next">Keeping things running</li>
         </ol>
     </section>
@@ -111,11 +127,11 @@
                 <li class="next">CloudFormation</li>
                 <li class="next">AWS CDK(Cloud Development Kit)</li>
             </ul>
+            <li class="next">S3</li>
             <li class="next">Cloudfront</li>
             <ul class="next">
                 <li>Cloudflare with Edge Computing</li>
             </ul>
-            <li class="next">S3</li>
             <li class="next">Lambda@Edge</li>
         </ul>
     </section>
@@ -137,6 +153,30 @@
                   }
             </code>
         </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Cloudfront</h2>
+        <ul>
+            <li class="next">Global Scale - 216 points of presence (PoPs)</li>
+            <li class="next">Integrates with AWS ACM - SSL cerificates for free</li>
+            <li class="next">Lambda@Edge - Run Lambda  function at the Edge</li>
+
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Lambda@Edge and Cloudfront</h2>
+        <div class="double">
+
+            <img src="./images/Lambda@Edge.png" height="300">
+            <ul>
+                <li>Viewer Response</li>
+                <li>Viewer Request</li>
+                <li>Origin Request</li>
+                <li>Viewer Response</li>
+            </ul> 
+        </div>
     </section>
 
     <section class="slide prism">
@@ -161,21 +201,6 @@
         </pre>
 
         <p class="note next">https://developers.google.com/web/fundamentals/security/csp/</p>
-    </section>
-
-    <section class="slide">
-        <h2>Cloudfront</h2>
-        <ul>
-            <li class="next">Global Scale - 216 points of presence (PoPs)</li>
-            <li class="next">SSL certificates at no extra cost</li>
-            <li class="next">Lambda@Edge - Run Lambda  function at the Edge</li>
-                <ul class="next">
-                    <li class="next">Viewer Response</li>
-                    <li class="next">Viewer Request</li>
-                    <li class="next">Origin Request</li>
-                    <li class="next">Viewer Response</li>
-                </ul>
-        </ul>
     </section>
 
     <section class="slide prism">
