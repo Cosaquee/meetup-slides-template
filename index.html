@@ -52,12 +52,15 @@
         <ol>
             <li>Who am I?</li>
             <li>Dynamic runtime vs static hosting</li>
-            <li>Requirements</li>
-            <li>Tools that we are using</li>
-            <li>Terraform</li>
-            <li>Cloudfront</li>
-            <li>Lambda@Edge and CSP</li>
-        </ol>
+            <li>Baseline security requirements</li>
+            <li>Tools that we are using
+                <ul>
+                    <li>Terraform</li>
+                    <li>Cloudfront</li>
+                    <li>Lambda@Edge and CSP</li>
+                </ul>
+            </li>
+       </ol>
     </section>
 
     <section class="slide compact">
@@ -73,14 +76,37 @@
         <p class="note next"> Secure static site on AWS </p>
     </section>
 
-
     <section class="slide">
         <h2>Dynamic vs static</h2>
         <img  src="https://media.giphy.com/media/xT9KVwVraalcvmKBfW/source.mp4"  alt=""/>
     </section>
 
+    <section class="slide compact">
+        <h2>Dynamic runtime</h2>
+        <img src="./images/dynamic-simple.png" height="400">
+    </section>
 
     <section class="slide compact">
+        <h2>DNS based load balancing</h2>
+        <img src="./images/dynamic-dns.png" height="400">
+    </section>
+
+    <section class="slide compact">
+        <h2>Using load balancing</h2>
+        <img src="./images/dynamic-balancer.png" height="400">
+    </section>
+
+    <section class="slide compact">
+        <h2>Horizontal scaling</h2>
+        <img src="./images/dynamic-full.png" height="400">
+    </section>
+
+    <section class="slide">
+        <h2>Static hosting</h2>
+        <img src="./images/static.png" height="300">
+    </section>
+
+    <!-- <section class="slide compact">
         <h2>Dynamic runtime</h2>
 
         <ol>
@@ -94,16 +120,16 @@
             <li class="next">Scalability and handling spikes</li>
             <li class="next">Keeping things running</li>
         </ol>
-    </section>
-
+    </section> -->
 
     <section class="slide compact">
-        <h2>Static hosting</h2>
+        <h2>Adventages of static hosting</h2>
 
         <ol>
             <li class="next">"Almost" free</li>
             <li class="next">Sane defaults out-of-the-box</li>
             <li class="next">Much more scalable</li>
+            <li class="next">No need to manage servers</li>
         </ol>
     </section>
 
@@ -125,10 +151,10 @@
             <ul class="next">
                 <li class="next">Serverless</li>
                 <li class="next">CloudFormation</li>
-                <li class="next">AWS CDK(Cloud Development Kit)</li>
+                <li class="next">AWS CDK (Cloud Development Kit)</li>
             </ul>
             <li class="next">S3</li>
-            <li class="next">Cloudfront</li>
+            <li class="next">CloudFront</li>
             <ul class="next">
                 <li>Cloudflare with Edge Computing</li>
             </ul>
@@ -156,11 +182,17 @@
     </section>
 
     <section class="slide">
-        <h2>Cloudfront</h2>
+        <h2>CloudFront</h2>
         <ul>
-            <li class="next">Global Scale - 216 points of presence (PoPs)</li>
-            <li class="next">Integrates with AWS ACM - SSL cerificates for free</li>
-            <li class="next">Lambda@Edge - Run Lambda  function at the Edge</li>
+            <li class="next">Global Scale - 205 Edge Location </li>
+            <li class="next">Integrates with existing AWS services
+                <ul>
+                    <li class="next">ACM - SSL certificates for free</li>
+                    <li class="next">WAF - Web Application Firewall</li>
+                    <li class="next">CloudWatch - Monitoring and Alerting</li>
+                </ul>
+            </li>
+            <li class="next">Lambda@Edge - Run Lambda functions at the Edge</li>
 
         </ul>
     </section>
@@ -174,7 +206,7 @@
                 <li>Viewer Response</li>
                 <li>Viewer Request</li>
                 <li>Origin Request</li>
-                <li>Viewer Response</li>
+                <li>Origin Response</li>
             </ul> 
         </div>
     </section>
@@ -266,11 +298,6 @@
                 }];
             </code>
         </pre> 
-    </section>
-
-    <section class="slide">
-        <h2>Architecture diagram</h2>
-        <img src="./images/diagram.png" height="500" alt="">
     </section>
 
     <section class="slide compact">
